@@ -1,0 +1,77 @@
+/* Custom styles that complement Tailwind */
+@media (max-width: 640px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    .container {
+        padding: 1rem;
+    }
+    
+    header {
+        text-align: center;
+    }
+    
+    .flex-col {
+        gap: 0.5rem;
+    }
+}
+
+/* Modal transition */
+#edit-modal {
+    transition: opacity 0.3s ease;
+}
+
+/* Better mobile touch targets */
+button, [role="button"] {
+    min-width: 44px;
+    min-height: 44px;
+}
+
+/* Status indicator animations */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.pending-status {
+    animation: pulse 2s infinite;
+}
+
+/* Estilos para el calendario */
+#week-view {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+#week-view > div {
+    min-height: 100px;
+}
+
+/* Print styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+        font-size: 12pt;
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #calendar-view {
+        page-break-after: always;
+    }
+}
